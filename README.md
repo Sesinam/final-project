@@ -1,2 +1,2 @@
 # final-project
-final project of group Safsie for She Loves Innovation Bootcamp
+project to create a website to allow patients book hospital appointments and purchase drugs.
