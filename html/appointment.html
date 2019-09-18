@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MedConnect|Book Appointment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/appointment.css">
+    <link rel="stylesheet" href="../css/success.css">
+</head>
+<body>
+    <div id="navigation">
+        <nav>
+            <ul>
+                <li id="logoo"><a href="index.html"><img src="../assets/Logo2.png"></a></li>
+                <li id="firstitem"><a href="../html/index.html" title="home">
+                    Home
+                </a></li>
+                <li><a href="../html/index.html#about" target="_parent" id="seconditem" title="About" onclick="titleChange()">
+                    About
+                </a></li>
+                <li><a href="../html/appointment.html" target="_blank" title="book appointment">
+                    Book Appointment
+                </a></li>
+                <li><a href="../html/index.html#contact" id="fourthitem" title="contact" onclick="titleChanges()">
+                    Contact 
+                </a></li>
+            </ul>
+            <button type="menu" id="userBut" onclick="userMenu()"><em id="username">Username  </em><i class="fa fa-caret-down"></i></button>
+        </nav>
+    </div>
+    
+    <div class="formPopup" id="menu">
+        <form class="formContainer" method="POST" id="formmenu">
+            <button type="button" onclick="openAppointments()">Appointments</button><br/><br/>
+            <button type="button" onclick="">Access Files</button><br/><br/>
+            <button type="button" onclick="sign()">Sign Up</button><br/><br/>
+            <button type="button" onclick="logUserIn()">Sign In</button><br/><br/>
+            <button type="button" style="margin-top: 150px; border-top: 2px solid grey; border-bottom:none;" onclick="reDirect()">Log Out</button>
+        </form>
+    </div>
+    <div class="form-popup" id="myForm">
+        <form class="form-container" method="POST" name="vForm" onsubmit="return Validate()">
+            <h1>Sign Up</h1>
+                  
+            <label for="name"><b>Username</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="name" required><br/>
+            <p id="name_error" class="valid">this is a required field</p><br/><br/>
+                  
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter email address" name="email" id="email" required><br/><br/>
+            <p id="email_error" class="valid">this is a required field</p><br/><br/>
+    
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="enter your password" name="password" id="pass" required><br/><br/>
+            <p id="password_error" class="valid">this is a required field</p><br/><br/>
+    
+            <label for="rePassword"><b>Re enter Password</b></label>
+            <input type="password" placeholder="Reenter your password" name="rePassword" id="rePass" required><br/>
+            <p id="password_match" class="valid">passwords do not match</p><br/>
+            <p id="pass_error" class="valid">this is a required field</p><br/><br/>
+            <p class="extras">Already have an account? <em class="newLinks" onclick="openformUp()">Sign In</em></p>
+                  
+            <button type="submit" class="btn" id="Submit">Sign Up</button><br/><br/>
+            <button class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <div class="form-popup" id="myform">
+        <form class="form-container" method="POST" name="vform" onsubmit="return validate()">
+            <h1>Log In</h1>
+            <p class="valid" id="login_error">username or password is incorrect</p><br/>
+    
+            <label for="name"><b>Username or Email</b></label>
+            <input type="text" placeholder="Enter Username or Email" name="name" id="nameEmail" required><br/><br/>
+            <p class="valid" id="nameError">this is a required field</p><br/>
+    
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter your password" name="password" id="password" required><br/>
+            <p class="valid" id="passwordError">this is a required field</p><br/>
+    
+            <a href="#"><p class="extras">Forgot Password</p></a>
+            <p class="extras">Don't have an account? <em class="newLinks" onclick="openFormUp()">Sign Up</em></p>
+    
+            <button type="submit" class="btn" id="submit">Log In</button><br/><br/>
+            <button class="btn cancel" onclick="closeform()">Close</button>
+        </form>
+    </div>
+    <div id="appointmentForm">
+        <form method="POST" id="form_container" onsubmit="return addAppointment('myTable');">
+            <h1>Book your appointment</h1>
+              
+            <label for="name"><b>Username</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="userBook" required><br/><br/>
+              
+            <label for="day"><b>Date</b></label>
+            <input type="date" placeholder="select date" name="day" id="date" required><br/><br/>
+    
+            <label for="time"><b>Time</b></label>
+            <input type="time" placeholder="enter time" name="time" id="time" required><br/><br/>
+    
+            <label for="service"><b>Prefered service</b></label>
+            <select name="service" id="service" required>
+                <option value=" ">Select Service</option>        
+                <option value="hospital">Hospital</option>
+                <option value="pharmacy">Pharmacy</option>
+                <option value="laboratory">Laboratory</option>
+                <option value="surgery">Surgery</option>
+                <option value="optometry">Optometry</option>
+                <option value="dietetics">Dietetics</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="neurology">Neurology</option>
+                <option value="oncology">Oncology</option>
+            </select><br/><br/>
+            <label for="partner"><b>Venue</b></label>
+            <select name="partner" id="partner" required>
+                <option value=" ">Select Partner</option>        
+                <option value="peprah hospital">Peprah Hospital, Ghana</option>
+                <option value="amazing grace hospital">Amazing Grace Hospital, Nigeria</option>
+                <option value="grace eye clinic">Grace Eye Clinic, Ivory Coast</option>
+                <option value="lancds laboratories">Lancds Laboratories, South Africa</option>
+                <option value="emp pharmacy">EMP Pharmacy, Kenya</option>
+            </select>
+            <button type="submit" id="book" class="btn" onclick="addAppointment('myTable');" disabled>Book</button><br/><br/>
+        </form>
+    </div>
+    <div id="appointmentList">
+        <table id="myTable">
+            <tr>
+                <th>Appointment Date</th>
+                <th>Purpose</th>
+                <th>Partner</th>
+            </tr>
+        </table>
+    </div>
+    <div id="contact">
+        <div id="contactgroup">
+            <h4>Contact Us</h4>
+            <p>
+                PointPay<br><br/>
+                0265534903<br><br/>
+                Monday - Friday: 9am to 5pm<br><br/>
+                Asoyi Road, Accra, Ghana. 
+            </p>
+        </div>
+        <div id="contacttwo">
+            <h4 id="contactform">Contact Us</h4>
+                <form action="../back/contactMessages.js" method="POST" name="contactform" id="contactForm">
+                <input class="left" type="text" placeholder="First Name" name="first name" id="fn" required>
+                <input class="right" type="text" placeholder="Last Name" name="last name" id="ln" required>
+                <br/>
+                <br/>
+                <input class="left" type="email" placeholder="Email address" name="email address" id="ea" required>
+                <input class="right" type="text" placeholder="Subject" name="subject">
+                <br/>
+                <br/>
+                <input id="contactmessage" type="text" placeholder="Message" name="message" required><br/>
+                <br/>
+                <button type="submit"  onclick="proceed()" id="contactbutton">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <footer>
+            <div>
+                <p>
+                    Copyright © 2019 SafsieCare. All rights reserved. 
+                </p>
+                <ul>
+                    <li id="firsticon"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                </ul>
+            </div>
+            <a href="#" class="top-link hide" id="goup">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </footer> 
+    </div>
+    
+    <script type="text/javascript" src="../javascript/success.js"></script>
+    <script type="text/javascript" src="../javascript/signup.js"></script>
+    <script type="text/javascript" src="../javascript/appointment.js"></script>
+</body>
+</html>

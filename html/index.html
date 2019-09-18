@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MedConnect|Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div id="navigation">
+        <nav>
+            <ul>
+                <li id="logoo"><a href="index.html"><img src="../assets/Logo2.png"></a></li>
+                <li id="firstitem"><a href="../html/index.html" title="home">
+                    Home
+                </a></li>
+                <li><a href="../html/index.html#about" target="_parent" id="seconditem" title="About" onclick="titleChange()">
+                    About
+                </a></li>
+                <li><a href="../html/appointment.html" target="_blank" title="book appointment">
+                    Book Appointment
+                </a></li>
+                <li><a href="../html/index.html#contact" id="fourthitem" title="contact" onclick="titleChanges()">
+                    Contact 
+                </a></li>
+            </ul>
+            <button id="signBut" title="sign up to enjoy our services" onclick="openForm()">Sign Up</button>
+            <button id="LogBut" title="log in to enjoy our services" onclick="openform()">Log In</button>
+        </nav>
+    </div>
+    <div id="homefield"></div>
+
+    <div class="form-popup" id="myForm">
+        <form class="form-container" method="POST" action="success.html" name="vForm" onsubmit="return Validate()">
+            <h1>Sign Up</h1>
+              
+            <label for="name"><b>Username</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="name" required><br/>
+            <p id="name_error" class="valid">this is a required field</p><br/><br/>
+              
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter email address" name="email" id="email" required><br/><br/>
+            <p id="email_error" class="valid">this is a required field</p><br/><br/>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="enter your password" name="password" id="pass" required><br/><br/>
+            <p id="password_error" class="valid">this is a required field</p><br/><br/>
+
+            <label for="rePassword"><b>Re enter Password</b></label>
+            <input type="password" placeholder="Reenter your password" name="rePassword" id="rePass" required><br/>
+            <p id="password_match" class="valid">passwords do not match</p><br/>
+            <p id="pass_error" class="valid">this is a required field</p><br/><br/>
+            <p class="extras">Already have an account? <a href="index.html#myform" onclick="openformUp()">Sign In</a></p>
+              
+            <button type="submit" class="btn" id="Submit">Sign Up</button><br/><br/>
+            <button class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <div class="form-popup" id="myform">
+        <form class="form-container" method="POST" action="success.html" name="vform" onsubmit="return validate()">
+            <h1>Log In</h1>
+            <p class="valid" id="login_error">username or password is incorrect</p><br/>
+
+            <label for="name"><b>Username or Email</b></label>
+            <input type="text" placeholder="Enter Username or Email" name="name" id="nameEmail" required><br/><br/>
+            <p class="valid" id="nameError">this is a required field</p><br/>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter your password" name="password" id="password" required><br/>
+            <p class="valid" id="passwordError">this is a required field</p><br/>
+
+            <a href="#"><p class="extras">Forgot Password</p></a>
+            <p class="extras">Don't have an account? <a href="index.html#myForm" onclick="openFormUp()">Sign Up</a></p>
+
+            <button type="submit" class="btn" id="submit">Log In</button><br/><br/>
+            <button class="btn cancel" onclick="closeform()">Close</button>
+        </form>
+    </div>
+    <div id="about">
+        <h3>About Us</h3>
+        <p>
+            MedConnect is an advanced web application for heathcare providers and patients, that provides mobility and convenience. 
+            It incorporates most common and widly used aspects of healthcare information systems into a web friendly user interface. 
+            The design and user interface takes in to consideration the influence of smart phones. 
+            The idea behind MedConnect is to provide convenience and health tracking tools by the smart and effective usage of web technology. 
+            MedConnect is designed, developed and promoted by SafsieCare.
+            MedConnect's online hospital is aimed at providing health care services at your doorstep.
+            With our features, you are able to connect with professional medical practioners 
+            in the comfort of your homes. Forget the countless calls to the physician's office trying to get an appointent.
+            With MedConnect's appointments feature, you can book appoinments online at your convenience.
+            With our database, you can access your files. Including Lab reports, doctor's diagnosis and prescriptions.
+            You can also very easily, gain access to prsecribed drugs.
+        </p>
+
+        <div id="aboutExtra">
+            <div id="aboutFeatDiv1">
+                <div id="aboutFeatures1">
+                    <i><img class="bottom" src="../assets/featuresofabout2_medconnect.png"/></i>                        
+                    <i><img  class="top" src="../assets/featuresofabout1_medconnect.png"/></i>
+                </div>
+                <div id="aboutFeat1">
+                    <p>Safsie is designed and developed to help automate, assist and streamline healthcare service delivery</p>
+                </div> 
+            </div>
+            <div id="aboutFeatDiv2">
+                <div id="aboutFeatures2">
+                    <i><img class="bottom" src="../assets/aboutbenefits2_medconnect.png"/></i>                        
+                    <i><img  class="top" src="../assets/aboutbenefits1_medconnect.png"/></i>
+                </div>
+                <div>
+                    <p id="aboutFeat2">The app was developed in such a way that it can be easily used to conduct the booking of appointment and drug purchase by integrating the traditional healthcare services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div id="contactgroup">
+            <h4>Contact Us</h4>
+            <p>
+                PointPay<br><br/>
+                0265534903<br><br/>
+                Monday - Friday: 9am to 5pm<br><br/>
+                Asoyi Road, Accra, Ghana. 
+            </p>
+        </div>
+        <div id="contacttwo">
+            <h4 id="contactform">Contact Us</h4>
+                <form action="../back/contactMessages.js" method="POST" name="contactform" id="contactForm">
+                <input class="left" type="text" placeholder="First Name" name="first name" id="fn" required>
+                <input class="right" type="text" placeholder="Last Name" name="last name" id="ln" required>
+                <br/>
+                <br/>
+                <input class="left" type="email" placeholder="Email address" name="email address" id="ea" required>
+                <input class="right" type="text" placeholder="Subject" name="subject">
+                <br/>
+                <br/>
+                <input id="contactmessage" type="text" placeholder="Message" name="message" required><br/>
+                <br/>
+                <button type="submit"  onclick="proceed()" id="contactbutton">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div>
+       <footer>
+            <div>
+                <p>
+                    Copyright © 2019 SafsieCare. All rights reserved. 
+                </p>
+                <ul>
+                    <li id="firsticon"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                </ul>
+            </div>
+            <a href="#" class="top-link hide" id="goup">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </footer> 
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="../javascript/index.js" type="text/javascript"></script>
+</body>
+</html>
